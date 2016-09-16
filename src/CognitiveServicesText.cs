@@ -101,5 +101,9 @@ public class CognitiveServicesTextAnalysis : ICognitiveServicesTextAnalysis
         {
             throw new Exception(response["errors"].Children().First().Value<string>("message"));
         }
+        if(response["code"] != null && response["message"] != null)
+        {
+            throw new Exception(response["message"].Value<string>());
+        }
     }
 }
