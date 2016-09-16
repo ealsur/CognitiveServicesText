@@ -84,7 +84,7 @@ public class CognitiveServicesTextAnalysis : ICognitiveServicesTextAnalysis
     }
 
     /// <summary>
-    /// Detecta errores en la respuesta y arroja excepciones
+    /// Generic catch and throw that detects errors on the response body
     /// </summary>
     /// <param name="response"></param>
     private void CatchAndThrow(JObject response)
