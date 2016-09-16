@@ -1,5 +1,5 @@
 # Microsoft Cognitive Services Text Analysis API
-This is a **.Net Core** implementation of [Microsoft Cognitive Services Text Analysis](https://www.microsoft.com/cognitive-services/en-us/text-analytics-api) API as described by the [documentation](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7).
+Since I couldn't find any existing NuGet package that covered this particular API (other APIs [are available](https://www.nuget.org/profiles/ProjectOxfordSDK) though), this is a **.Net Core** implementation of [Microsoft Cognitive Services Text Analysis](https://www.microsoft.com/cognitive-services/en-us/text-analytics-api) API as described by the [documentation](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7).
 
 > You will need an `ApiKey` which is obtained once you activate the product on your Azure Subscription (activation/purchase option is available on the [Service page](https://www.microsoft.com/cognitive-services/en-us/text-analytics-api)).
 
