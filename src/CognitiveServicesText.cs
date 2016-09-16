@@ -71,7 +71,7 @@ public class CognitiveServicesTextAnalysis : ICognitiveServicesTextAnalysis
     /// </summary>
     /// <param name="language"></param>
     /// <param name="text"></param>
-    /// <returns>De 0 a 1 (1 siendo sentimiento positivo)</returns>
+    /// <returns>From 0 to 1 (1 being totally positive sentiment)</returns>
     public async Task<double> Sentiment(string language, string text)
     {
         var request = new TextRequest();
