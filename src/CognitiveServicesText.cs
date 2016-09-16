@@ -57,6 +57,10 @@ public class CognitiveServicesTextAnalysis : ICognitiveServicesTextAnalysis
     /// <returns></returns>
     public async Task<List<string>> KeyPhrases(string language, string text)
     {
+        if(string.IsNullOrEmpty(language) || string.IsNullOrEmpty(text))
+        {
+            throw new ArgumentNullException();
+        }
         var request = new TextRequest();
         request.Documents.Add(new TextDocument(text, language));
         var content = new StringContent(JsonConvert.SerializeObject(request), System.Text.Encoding.UTF8, "application/json");
@@ -74,6 +78,10 @@ public class CognitiveServicesTextAnalysis : ICognitiveServicesTextAnalysis
     /// <returns>From 0 to 1 (1 being totally positive sentiment)</returns>
     public async Task<double> Sentiment(string language, string text)
     {
+        if(string.IsNullOrEmpty(language) || string.IsNullOrEmpty(text))
+        {
+            throw new ArgumentNullException();
+        }
         var request = new TextRequest();
         request.Documents.Add(new TextDocument(text, language));
         var content = new StringContent(JsonConvert.SerializeObject(request), System.Text.Encoding.UTF8, "application/json");
