@@ -64,7 +64,7 @@ public class CognitiveServicesTextAnalysis : ICognitiveServicesTextAnalysis
         var request = new TextRequest();
         request.Documents.Add(new TextDocument(text, language));
         var content = new StringContent(JsonConvert.SerializeObject(request), System.Text.Encoding.UTF8, "application/json");
-        var result = await _httpClient.PostAsync($"{serviceEndpoint}keyPhrases", content);
+        var result = await _httpClient.PostAsync($"{serviceEndpoint}keyPhrases", content).ConfigureAwait(false);
         var response = JObject.Parse(await result.Content.ReadAsStringAsync());
         CatchAndThrow(response);
         return response["documents"].Children().First().Value<JArray>("keyPhrases").ToObject<List<string>>();
@@ -85,7 +85,7 @@ public class CognitiveServicesTextAnalysis : ICognitiveServicesTextAnalysis
         var request = new TextRequest();
         request.Documents.Add(new TextDocument(text, language));
         var content = new StringContent(JsonConvert.SerializeObject(request), System.Text.Encoding.UTF8, "application/json");
-        var result = await _httpClient.PostAsync($"{serviceEndpoint}sentiment", content);
+        var result = await _httpClient.PostAsync($"{serviceEndpoint}sentiment", content).ConfigureAwait(false);
         var response = JObject.Parse(await result.Content.ReadAsStringAsync());
         CatchAndThrow(response);
         return response["documents"].Children().First().Value<double>("score");
